@@ -1,5 +1,8 @@
-const element=React.createElement("h1",{id:"paraent"},
-React.createElement("h1",{id:"child"},
+import React from "react";
+import  ReactDOM  from "react-dom";
+
+const element=React.createElement("div",{id:"paraent"},
+React.createElement("div",{id:"child"},
 React.createElement("h1",{},"hello world from react")));
 
 console.log(element);
