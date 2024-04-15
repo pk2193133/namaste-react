@@ -1,3 +1,46 @@
-#htag {
-    color:red;
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin-bottom: 15px;
+}
+
+.logo{
+    height: 100px;
+    width: 100px;
+}
+
+.navbarContainer>ul{
+    font-size: 24px;
+    display: flex;
+    list-style-type: none;
+}
+
+.navbarContainer > ul > li {
+    padding: 10px;
+    margin: 10px
+}
+
+.cardTopContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardContainer:hover {
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.cardContainer{
+    width: 220px;
+    margin: 5px;
+    padding: 5px;
+    
+}
+
+.truncate-text {
+    width: 200px; /* Set your desired width */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* This will show ellipsis (...) for truncated text */
 }

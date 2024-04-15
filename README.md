@@ -1,9 +1,9 @@
 E-01
-
+------
 -> 
 
 E-02
-
+------
 -> we learnt how to make a raect project with simple npm.
 
 -> when we are writing npm init- it ask us simple project related question and whatever answer we give based on that it creates a package.json file.
@@ -31,6 +31,7 @@ E-02
 -> dist- this folder contains the files which are created after build process (can be compared to bytecode in java just for understanding). in simple terms source code written in jsx,javascript,css and other assets are tranformed,bundled and optimized for deployement.
 
 E-03
+------
 
 -> since we can work with element created using React library but the code becomes a bit confusing to read and understand so for this purpose JSX was introduced which is html like syntax. We can consider jsx to be combination of html and javascript;
 
@@ -59,3 +60,28 @@ E-03
     <InnerFunctionalComponenet/>
     <h1 id="component id">rendering functional component</h1>
     </div>;
+
+E-04
+------
+Assignment
+● Is JSX mandatory for React?
+● Is ES6 mandatory for React?
+● {TitleComponent} vs {<TitleComponent/>} vs
+{<TitleComponent></TitleComponent>} in JSX
+● How can I write comments in JSX?
+● What is <React.Fragment></React.Fragment> and <></> ?
+● What is Virtual DOM?
+● What is Reconciliation in React?
+● What is React Fiber?
+● Why we need keys in React? When do we need keys in React?
+● Can we use index as keys in React?
+● What is props in React? Ways to
+● What is a Config Driven UI ?
+
+E-05
+------
+Assignment
+● What is the difference between Named Export, Default export and * as export?
+● What is the importance of config.js file
+● What are React Hooks?
+● Why do we need a useState Hook?
