@@ -44,3 +44,17 @@
     overflow: hidden;
     text-overflow: ellipsis; /* This will show ellipsis (...) for truncated text */
 }
+
+.shimmerContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmerCard{
+    width: 220px;
+    height:300px;
+    margin: 5px;
+    padding: 5px;
+    background-color:rgba(19, 205, 215, 0.878);
+    border: 1px solid black;
+}

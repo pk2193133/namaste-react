@@ -85,3 +85,12 @@ Assignment
 ● What is the importance of config.js file
 ● What are React Hooks?
 ● Why do we need a useState Hook?
+
+E-06
+------
+->cors extension
+->swiggies actual api
+->optional chaining
+->fetch api(async await)
+->useEffect hook
+->shimmer ui
