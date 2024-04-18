@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { resjson } from "../utils/mockData";
 import CardComponent from "./CardComponent";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const BodyComponent=()=>{
     const [mockdata,setMockData]=useState([]);
@@ -48,7 +49,7 @@ const BodyComponent=()=>{
             <div className="cardTopContainer">
             {returnedarr=filteredData.map(json=> {
             cnt++;
-            return <CardComponent key={json.info.id+""+cnt} data={json}/>
+            return <Link to={"/Restaurant/"+json.info.id}><CardComponent key={json.info.id+""+cnt} data={json}/></Link>
             } 
             )
             }

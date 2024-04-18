@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const HeaderComponent=()=>{
     return (<div className="headerContainer">
         <div className="imageContainer" >
@@ -6,8 +8,8 @@ const HeaderComponent=()=>{
         <div className="navbarContainer">
             <ul>
                 <li>home</li>
-                <li>about us</li>
-                <li>contact us</li>
+                <li><Link to="/About">about us</Link></li>
+                <li><Link to="/Contact">contact us</Link></li>
                 <li>cart</li>
             </ul>
         </div>
