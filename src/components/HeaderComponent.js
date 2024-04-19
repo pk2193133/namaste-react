@@ -7,7 +7,8 @@ const HeaderComponent=()=>{
         </div>
         <div className="navbarContainer">
             <ul>
-                <li>home</li>
+                <li><Link to="/">home</Link></li>
+                <li><Link to="/grocery">Grocery</Link></li>
                 <li><Link to="/About">about us</Link></li>
                 <li><Link to="/Contact">contact us</Link></li>
                 <li>cart</li>
