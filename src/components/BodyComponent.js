@@ -1,14 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { resjson } from "../utils/mockData";
 import CardComponent from "./CardComponent";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import  ModifiedCardComponent  from "./ModifiedCardComponent";
+import UserContext from "../utils/UserContext";
 
 const BodyComponent=()=>{
     const [mockdata,setMockData]=useState([]);
     const[filteredData,setFilteredData]=useState([]);
     const [inputVal,setInputVal]=useState('');
+    const {loggedInUser,setUserName}=useContext(UserContext);
     console.log(inputVal);
+
+    const ModifiedCardComponnt=ModifiedCardComponent(CardComponent);
+
     useEffect(()=>{
         getdata();
     },[]);
@@ -19,8 +25,10 @@ const BodyComponent=()=>{
         json=await res.json();
         }
         catch{
+            
             console.log("error while getting data");
         }
+        console.log(json);
         const res=json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
         //console.log(json);
         setMockData(res);
@@ -46,10 +54,16 @@ const BodyComponent=()=>{
                 console.log(modifiedData);
                 setFilteredData(modifiedData);
             }}>filter data</button>
+            <label>User :</label>
+            <input type="text" value={loggedInUser} 
+            onChange={(e)=>{setUserName(e.target.value);
+                console.log(loggedInUser);}}>
+            </input>
             <div className="cardTopContainer">
             {returnedarr=filteredData.map(json=> {
             cnt++;
-            return <Link to={"/Restaurant/"+json.info.id}><CardComponent key={json.info.id+""+cnt} data={json}/></Link>
+            return json.info.avgRating>4?<Link to={"/Restaurant/"+json.info.id}><ModifiedCardComponnt key={json.info.id+""+cnt} data={json}></ModifiedCardComponnt></Link>:
+             <Link to={"/Restaurant/"+json.info.id}><CardComponent key={json.info.id+""+cnt} data={json}/></Link>
             } 
             )
             }

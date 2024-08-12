@@ -112,3 +112,27 @@ Coding Assignment:
 ● Make a Error page for routing errors
 ● Create a Restaurant Page with dynamic restaurant ID
 ● (Extra) - Create a login Page using Formik Library
+
+E-09
+-------
+Theory -
+● When and why do we need lazy()?
+● What is suspense?
+● Why we got this error : A component suspended while responding to
+synchronous input. This will cause the UI to be replaced with a loading indicator.
+To fix, updates that suspend should be wrapped with startTransition? How does
+suspense fix this error?
+● Advantages and disadvantages of using this code splitting pattern?
+● When do we and why do we need suspense?
+
+Coding -
+● Create your custom hooks
+● Try out lazy and suspense
+● Make your code clean.
+
+E-10
+--------
+-> Higher order component- which takes other component as input and return another component as output.
+-> Controlled state management from parent component to child component by passing setState method as props to child component.
+-> useContext- used to avoid prop drilling, basically to make property globally available so that we dont have to pass these property as props to component that dont even need it, we can use createContext to create it and useContext to use its property.
+-> we have to wrap <CustomContext.Provider value={{someproperty:""}}> on the components that wants to use CustomContext property.
