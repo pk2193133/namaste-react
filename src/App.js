@@ -9,6 +9,8 @@ import Error from "./components/Error";
 import RestaurantDetail from "./components/RestaurantDetail";
 import Grocery from "./components/Grocery";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const groceryLazyLoad=lazy(()=>import("./components/Grocery"));
 
@@ -16,12 +18,15 @@ const TotalContainer=()=>{
 
     const [user,setUserName]=useState();
     return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser:user,setUserName}}>
     <div className="outermost-container">
         <HeaderComponent/>
         <Outlet/>
     </div>
-    </UserContext.Provider>);
+    </UserContext.Provider>
+    </Provider>
+    );
 }
 
 const appRoute=createBrowserRouter([

@@ -5,12 +5,20 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import  ModifiedCardComponent  from "./ModifiedCardComponent";
 import UserContext from "../utils/UserContext";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const BodyComponent=()=>{
     const [mockdata,setMockData]=useState([]);
     const[filteredData,setFilteredData]=useState([]);
     const [inputVal,setInputVal]=useState('');
     const {loggedInUser,setUserName}=useContext(UserContext);
+    
+    const dispatch=useDispatch();
+    const handleCart=()=>{
+        console.log("Item added to cart");
+        dispatch(addItem("pizza"));
+    };
     console.log(inputVal);
 
     const ModifiedCardComponnt=ModifiedCardComponent(CardComponent);
@@ -49,6 +57,7 @@ const BodyComponent=()=>{
                 console.log(modifiedData);
                 setFilteredData(modifiedData);
             }}>search</button>
+            <button type="button" onClick={handleCart}>Add to cart</button>
             <button type="button" onClick={()=>{
                 let modifiedData=mockdata.filter(val=>val.info.avgRating>4.3);
                 console.log(modifiedData);
