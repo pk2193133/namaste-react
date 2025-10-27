@@ -6,6 +6,9 @@ const cartSlice=createSlice({
         items:[]
     },
     reducers:{
+        //here addItem, deleteItem and clearCart are action creators and lambda functions corresponding to each action creator
+        //is reducer function
+
         addItem:(state,action)=>{
             state.items.push(action.payload)
         },

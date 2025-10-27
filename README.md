@@ -136,3 +136,53 @@ E-10
 -> Controlled state management from parent component to child component by passing setState method as props to child component.
 -> useContext- used to avoid prop drilling, basically to make property globally available so that we dont have to pass these property as props to component that dont even need it, we can use createContext to create it and useContext to use its property.
 -> we have to wrap <CustomContext.Provider value={{someproperty:""}}> on the components that wants to use CustomContext property.
+
+
+E-12
+________
+
+-> We use redux as a centralised way to handle state. Because there can be instances when multiple components depends upon a single variable.
+-> major componenets of redux-
+1- Store
+2- Slice
+3- Action(object with attribute Type and payload)
+4- Action creators(function that returns Action object)
+5- Reducers(a pure function that takes the current state and an action and returns the next state)
+
+Overall dispatch flow
+
+->Component dispatches an action: dispatch(addItem({ id:1 }));
+->Redux sends the action object to the store.
+->The store runs the root reducer (which includes your cart reducer).
+->The cart reducer handles the cart/addItem action (your addItem reducer function is invoked) and returns new state.
+->Subscribed components (useSelector / connect) re-render with the updated state.
+
+-> we use UseDispatch() to dispatch action creator whenever we want to make any change to redux state.
+-> we use useSelector((store)=>store.cart.items) to link a components variable to stores state, so whenever any state changes occur the component which uses useSelector will get re-rendered.
+
+E-13
+_______
+
+-> we use react-testing-library which in turn uses Jest behind the scene
+-> we create a __test__ folder for test files because when we use npm test command it searches this folder for test files.
+-> we write test files with followinf syntax
+    
+    test("description",()=>{}) -> here the second parameter is callback function which has main testing logic
+
+    example-
+
+    test("check whether component renders or not",()=>{
+	render(<Contact/>);
+
+	const heading=screen.getByRole("heading");
+	expect(heading).toBeInTheDocument();
+
+})
+
+-> for testing we use jsdom library which basically helps to run dom elements(generally browser displays the dom elements but for testing we use jsdom library);
+-> render function above renders our code in jsdom.
+
+
+
+
+
