@@ -7,7 +7,7 @@ const CardComponent=(props)=>{
     const {loggedInUser}=useContext(UserContext);
    // console.log(data);
     return (
-        <div className="cardContainer">
+        <div className="cardContainer" data-testid="resCard">
             <img src="https://img.freepik.com/premium-vector/good-food-logo-design_79169-10.jpg?w=2000" height="150px" width="200px"></img>
             <div className="truncate-text">
             <h4>{name}</h4>

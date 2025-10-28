@@ -182,7 +182,9 @@ _______
 -> for testing we use jsdom library which basically helps to run dom elements(generally browser displays the dom elements but for testing we use jsdom library);
 -> render function above renders our code in jsdom.
 
+Integration Testing-
 
+->see Body.test.js
 
 
 

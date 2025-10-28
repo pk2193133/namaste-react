@@ -47,7 +47,7 @@ const BodyComponent=()=>{
     console.log(mockdata);
     return mockdata.length==0?<Shimmer/>:(
         <div className="bodyContainer">
-            <input type="text" value={inputVal} 
+            <input type="text" value={inputVal} data-testid="search-input"
             onChange={(e)=>{setInputVal(e.target.value);
                 console.log(inputVal);}}>
             </input>
